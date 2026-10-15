@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fceaf2">
+  <title>Hank &amp; Ember — Our Little Universe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="background-glow glow-pink"></div>
+<div class="background-glow glow-blue"></div>
+
+<div class="floating-heart heart-one">♡</div>
+<div class="floating-heart heart-two">♡</div>
+<div class="floating-heart heart-three">✦</div>
+
+<header class="topbar">
+  <a class="brand" id="homeLink" href="#coverScreen">
+    <span class="brand-icon">♡</span>
+    <span>HANK &amp; EMBER</span>
+  </a>
+
+  <span class="topbar-note">A story written by santa</span>
+</header>
+
+<main>
+  <!-- TRANG BÌA -->
+  <section class="screen active" id="coverScreen">
+    <div class="cover-card">
+      <div class="cover-label">LOVE STORY</div>
+
+      <h1>Hank <span>&amp;</span> Ember</h1>
+
+      <p class="cover-subtitle">
+        Một câu chuyện nho nhỏ của bọn mình
+      </p>
+
+      <div class="cover-art">
+        <img
+                src="images/cover.jpg"
+                alt="Hank và Ember"
+                onerror="this.style.display='none'"
+        >
+
+        <span class="cover-sparkle sparkle-a">✦</span>
+        <span class="cover-sparkle sparkle-b">♡</span>
+      </div>
+
+      <button class="primary-button" id="meetButton">
+        Khám phá câu chuyện <span>→</span>
+      </button>
+
+      <div class="cover-bottom">
+        <span>16 PAGES</span>
+        <span>MADE WITH LOVE ♡</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIỚI THIỆU NHÂN VẬT -->
+  <section class="screen" id="characterScreen">
+    <div class="character-heading">
+      <span class="eyebrow">MEET THE CHARACTERS</span>
+
+      <h2>Giới thiệu nhân vật</h2>
+
+      <p>
+        Mỗi người đều có những điều khiến mình chưa tự tin.
+      </p>
+    </div>
+
+    <div class="character-grid">
+      <article class="character-card">
+        <div class="character-image">
+          <img
+                  src="images/hank.jpg"
+                  alt="Hank"
+                  onerror="this.style.display='none'"
+          >
+        </div>
+
+        <div class="character-info">
+          <span class="character-number">CHARACTER 01</span>
+          <h3>Hank</h3>
+
+          <p>
+            Một robot hiền lành, vụng về và luôn cố gắng làm Ember vui.
+            Cậu thường nghĩ mình chẳng có gì đặc biệt.
+          </p>
+
+          <span class="character-tag">The little dreamer</span>
+        </div>
+      </article>
+
+      <article class="character-card">
+        <div class="character-image">
+          <img
+                  src="images/ember.jpg"
+                  alt="Ember"
+                  onerror="this.style.display='none'"
+          >
+        </div>
+
+        <div class="character-info">
+          <span class="character-number">CHARACTER 02</span>
+          <h3>Ember</h3>
+
+          <p>
+            Một cô robot dịu dàng, tò mò và có chiếc nơ đen đáng yêu.
+            Cô không phải lúc nào cũng biết cách nói ra cảm xúc của mình.
+          </p>
+
+          <span class="character-tag">The quiet sunshine</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="character-actions">
+      <button class="secondary-button" id="backCoverButton">
+        ← Trang bìa
+      </button>
+
+      <button class="primary-button" id="startStoryButton">
+        Bắt đầu đọc <span>♡</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- TRANG ĐỌC TRUYỆN -->
+  <section class="screen" id="readerScreen">
+    <div class="reader-top">
+      <button class="text-button" id="backToCharacters">
+        ← Nhân vật
+      </button>
+
+      <div class="reading-status">
+        <span class="status-dot"></span>
+        READING MODE
+      </div>
+
+      <a class="text-button" id="readerHomeLink" href="#coverScreen">
+        Trang chủ
+      </a>
+    </div>
+
+    <div class="reading-progress">
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div class="progress-labels">
+        <span id="progressText">TRANG 01</span>
+        <span id="progressPercent">6%</span>
+      </div>
+    </div>
+
+    <div class="book-wrap">
+      <article class="book-page" id="bookPage">
+        <div class="page-reading-area">
+          <div class="story-text" id="storyText"></div>
+          <div class="printed-page-number" id="printedPageNumber">— 01 —</div>
+        </div>
+      </article>
+    </div>
+
+    <div class="reader-controls">
+      <button
+              class="page-button previous-button"
+              id="prevButton"
+              disabled
+      >
+        ← Trang trước
+      </button>
+
+      <span class="page-counter" id="pageCounter">01 / 16</span>
+
+      <button class="page-button next-button" id="nextButton">
+        Trang tiếp <span>→</span>
+      </button>
+    </div>
+
+    <p class="reader-hint">
+      Bạn có thể dùng phím ← → hoặc vuốt ngang để lật trang.
+    </p>
+  </section>
+
+  <section class="screen" id="endingScreen">
+    <div class="ending-card">
+      <div class="ending-stars">✦ ♡ ✦</div>
+      <div class="ending-kicker">THE END</div>
+
+      <div class="ending-art">
+        <img
+                src="images/ending.jpg"
+                alt="Hank và Ember dưới bầu trời sao"
+                onerror="this.style.display='none'"
+        >
+      </div>
+
+      <h2>gửi em H nào đó</h2>
+
+      <p class="ending-message">
+        20/10 cũng tới rồi, đây là món quà nho nhỏ a có thể dành tặng em, anh chúc em luôn xinh đẹp khỏe mạnh và học tập thật tốt. Có thể những hứa hẹn của anh sẽ không thành hiện thực nhưng anh luôn trân quý mọi khoảng khắc bên em, mong em hãy ghi nhớ điều đấy
+      </p>
+
+      <div class="system-message">
+        <p><strong>SYSTEM STATUS: HAPPY ♡</strong></p>
+        <p>DESTINATION: WITH HIEN.</p>
+      </div>
+
+      <div class="ending-actions">
+        <button class="primary-button" id="restartButton">
+          Đọc lại từ đầu <span>↻</span>
+        </button>
+
+        <button class="secondary-button" id="charactersAgainButton">
+          Gặp lại nhân vật
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>HANK &amp; EMBER</span>
+  <span>A LITTLE UNIVERSE MADE OF LOVE ♡</span>
+</footer>
+
+<script src="js/script.js"></script>
+
+<script>
+  document.querySelector('#readerHomeLink').addEventListener('click', function (event) {
+    event.preventDefault();
+
+    document.querySelectorAll('.screen').forEach((screen) => {
+      screen.classList.remove('active');
+    });
+
+    document.querySelector('#coverScreen').classList.add('active');
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+</body>
+</html>
